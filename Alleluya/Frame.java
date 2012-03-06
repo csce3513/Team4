@@ -15,27 +15,85 @@ public class Frame extends JFrame{
   Monster m = new Monster();
   Hero h;
   Battle b ; 
+  String actual;
+  
+  HeroMonster hm = new HeroMonster();
+  public Frame(Hero hero, Monster monster){
+      h = hero;
+      m = monster;
+      makeFrame();
+      
+  }
+  
   
   
   public Frame(){ 
-     
   f = new Group4_NewCharacter();
   h = new Hero(100,f.getName(),f.getElement(),f.getGender());
-  
+  m = new Monster();
   f.setVisible(false);
+  makeFrame();
   
+  }
+  
+private void initComponents() {
 
-  
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/team4/group4_CharSelect.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel1.setOpaque(true);
+        pack();
+    }
+
+  public void makeFrame(){
+        
   setSize(600, 400);
   setVisible(true);
   setLocationRelativeTo(null);
+  
   setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
   setLayout(new BorderLayout(3,100));
+  if(m.deadCheck()){
+            setVisible(false);
+        }
   
   name = new JTextField("Type that word");
   name.setBounds(250, 100, 100, 100);
   
-  String write_me = "Please type the word: " + "  " + actualWord() + "  ";
+  actual = actualWord();
+  String write_me = "Please type the word: " + "  " + actual + "  ";
   label = new JLabel(write_me);
   
    
@@ -80,7 +138,7 @@ public class Frame extends JFrame{
   add(p1,BorderLayout.NORTH);
   add(p2,BorderLayout.CENTER);
   add(p3,BorderLayout.SOUTH);
- 
+
   
   
   }
@@ -121,7 +179,11 @@ public class Frame extends JFrame{
      public class HEL implements ActionListener{
          public void actionPerformed(ActionEvent e)
          {
-        Battle b = new Battle(getTypedWord());
+        Battle b = new Battle();
+        HeroMonster hm = new HeroMonster();
+        hm = b.Battle(getTypedWord(),h,m,actual);
+        h = hm.returnHero();
+        m = hm.returnMonster();
         setVisible(false);
        
     	
@@ -137,5 +199,8 @@ public class Frame extends JFrame{
     public String actualWord(){
     	return wordList[getIndex()];
     }
-     
+    
+    
+   private javax.swing.JLabel jLabel1;
+   private javax.swing.JPanel jPanel1;
 }

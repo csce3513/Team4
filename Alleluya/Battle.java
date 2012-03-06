@@ -11,23 +11,29 @@ String entered_word;
 int LISTSIZE = 10;
 Hero hero = new Hero();
 Monster monster = new Monster();
-Frame f = new Frame();
-
+HeroMonster hm = new HeroMonster();
+//Frame f = new Frame(hero, monster);
+String userInput = "";
+String actualInput = "";
     
-    public Battle(String n)
+    public HeroMonster Battle(String n, Hero h, Monster m,String r)
     {
         entered_word = n;
- 
-    	Hero h = new Hero();
-    	Monster m = new Monster();
-    	h = returnHero();
-    	m = returnMonster();
+        userInput = n;
+        actualInput = r;
+    	hero = h;
+    	monster = m;
     	
-    	while(!m.deadCheck() && !h.deadCheck()){
-    	heroMonsterFight();
-    	}
+    	if(!m.deadCheck() && !h.deadCheck()){
+    	heroMonsterFight(n,r);
+        Frame f = new Frame(hero,monster);}
         
+        hm = new HeroMonster(h,m);
+        return hm;
+    	
     }
+    
+    
    
     public String typeTheWord(){
     	return entered_word;
@@ -35,9 +41,9 @@ Frame f = new Frame();
     }
    
     
-    public void heroMonsterFight(){
+    public void heroMonsterFight(String actual, String entered){
     	
-    	monster.takeDamage(hero.doDamage(charCompare(f.actualWord(),typeTheWord())));
+    	monster.takeDamage(hero.doDamage(charCompare(actual,entered)));
     	
     	if(monster.deadCheck()){
             
@@ -63,9 +69,9 @@ Frame f = new Frame();
     public Hero returnHero(){
     	return hero;
     }
-    public Frame returnFrame(){
-    	return f;
-    }
+  //  public Frame returnFrame(){
+  //  	return f;
+  //  }
     
     
  public double charCompare(String actual, String entered){
