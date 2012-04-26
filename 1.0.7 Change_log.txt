@@ -1,0 +1,19 @@
+CHANGELOG VERSION 1.0.7
+April 26, 2012
+Jack Xu
+
+Updates:
+* "Character Name" now auto clears itself when user clicks the textfield (Character Creation)
+* "Battle word" field now auto clears when clicked (battle frame)
+* added variable for hero "maxHealth" with its related changes
+* Save file now saves crystals
+
+
+Fixes:
+* Replaced textfield in Character Creation with Label with appropriate formatting
+* Replaced textfield in World with Label with appropriate formatting
+* Changed the color scheme for world and character creation panels
+* cleaned up variable names (no longer just j
+* cleaned up the code deleting unused variables
+* cleaned up code formatting
+* repositioned layout for game world
