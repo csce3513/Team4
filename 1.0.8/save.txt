@@ -1,1 +1,1 @@
-76 100 Jack Fire Male 4 0
+100 100 Jack Fire Male 0 0

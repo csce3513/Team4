@@ -12,10 +12,12 @@ public class BattleFrame extends JFrame {
     JProgressBar heroHP, monsterHP;
     JTextField name;
     JButton back;
-    private CharCreate f;
-    String[] wordList = {"tom", "alley", "scot", "richard", "jack", "xu",
-        "harvey", "alleluya", "iradukunda", "alvie", "men", "software", "engineering",
-        "team", "awesome", "Stop", "hurt", "punch", "lick?"};
+    private javax.swing.JLabel bg_Battle;
+    String[] wordList = {"tom", "alley", "scot", "richard", "jack", "xu", "brad", "doctor", "dead", "supercalifragilisticexpialidocious", "graduation",
+        "harvey", "alleluya", "iradukunda", "alvie", "men", "software", "engineering", "sword", "axe", "shield", "hammer", "pizza", "cyrstal", "github",
+        "team", "awesome", "stop", "hurt", "punch", "game", "rebirth", "of", "legends", "deaton", "failboat", "monster", "health", "0101010101", "boss",
+        "pairprogramming", "extreme"
+    };
     Monster m = new Monster();
     Hero h;
     Battle b;
@@ -35,20 +37,20 @@ public class BattleFrame extends JFrame {
     }
 
     public BattleFrame() {
-        // CharCreate f = new CharCreate();
-        // f.setVisible(false);
-        //   h = new Hero(100, f.getName(), f.getElement(), f.getGender());
         h = new Hero();
         m = new Monster();
         makeFrame();
-
-
-
     }
 
     public void makeFrame() {
-        if (!h.deadCheck()) {
+        Frame f = new Frame();
+        bg_Battle = new javax.swing.JLabel();
+        bg_Battle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg_battle.jpg"))); // NOI18N
+        //getContentPane().add(bg_Battle);
+        bg_Battle.setBounds(0, 0, 600, 400);
+        bg_Battle.setOpaque(false);
 
+        if (!h.deadCheck()) {
             setSize(600, 400);
             setVisible(true);
             setLocationRelativeTo(null);
@@ -56,10 +58,12 @@ public class BattleFrame extends JFrame {
             setVisible(true);
             setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             setLayout(new BorderLayout(3, 100));
+            
             timer.start();
+                       
 
             if (m.deadCheck()) {
-                dispose();
+                setVisible(false);
             }
 
             name = new JTextField(20);
@@ -70,27 +74,35 @@ public class BattleFrame extends JFrame {
                 }
             });
 
-            name.setBounds(250, 100, 500, 100);
+            name.setBounds(
+                    250, 100, 500, 100);
+
 
             actual = actualWord();
             String write_me = "Please type the word: " + "  " + actual + "  ";
             label = new JLabel(write_me);
+            label.setForeground(Color.white);
             String hero_name = h.getName() + "'s" + " health";
             hero = new JLabel(hero_name);
+            hero.setForeground(Color.white);
             heroHP = new JProgressBar(0, h.getMaxHealth());
             heroHP.setValue(h.getHealth());
             heroHP.setStringPainted(true);
+            UIManager.put("ProgressBar.selectionBackground", Color.BLUE);
+            UIManager.put("ProgressBar.selectionForeground", Color.WHITE);
 
-            heroHP.setBackground(Color.GREEN);
-            heroHP.setForeground(Color.BLUE);
+            heroHP.setBackground(Color.BLACK);
+            heroHP.setForeground(Color.BLACK);
+
 
             monsterHP = new JProgressBar(0, m.getMaxHP());
             monsterHP.setValue(m.getHealth());
             monsterHP.setStringPainted(true);
-            monsterHP.setBackground(Color.GREEN);
-            monsterHP.setForeground(Color.RED);
+            monsterHP.setForeground(Color.BLACK);
 
             monster = new JLabel("Monster's health");
+            monster.setForeground(Color.white);
+
             String Hp = " " + h.getHealth() + " ";
             String HP = " " + m.getHealth() + " ";
             hero_HP = new JLabel(Hp);
@@ -98,6 +110,8 @@ public class BattleFrame extends JFrame {
             back = new JButton("Back");
 
             JPanel p1 = new JPanel(new GridLayout(3, 3));
+
+
 
             //p1.add(hero);
             p1.add(hero, 5, 0);
@@ -109,17 +123,17 @@ public class BattleFrame extends JFrame {
 
             p1.add(hero_HP);
             p1.add(monster_HP);
-            p1.setOpaque(true);
-            JPanel p2 = new JPanel(new FlowLayout());
+
+            JPanel p2 = new JPanel(new GridLayout(2, 1));
 
             p2.add(label);
 
             p2.add(name);
-            p2.setOpaque(true);
+
             JPanel p3 = new JPanel(new GridLayout(1, 2));
 
             p3.add(back);
-            p3.setOpaque(true);;
+
 
             back.addActionListener(
                     new Back());
@@ -131,11 +145,22 @@ public class BattleFrame extends JFrame {
 
 
 
-            getContentPane().add(p1, BorderLayout.NORTH);
-            getContentPane().add(p2, BorderLayout.CENTER);
-            getContentPane().add(p3, BorderLayout.SOUTH);
+            getContentPane().add(p1);
+            p1.setBounds(0, 0, 600, 80);
+            p1.setOpaque(false);
 
-            getLayeredPane().setVisible(true);
+            getContentPane().add(p2);
+            p2.setBounds(150, 150, 300, 50);
+            p2.setOpaque(false);
+
+            getContentPane().add(p3);
+            p3.setBounds(150, 320, 300, 30);
+            p3.setOpaque(false);
+
+            getContentPane().add(bg_Battle);
+            bg_Battle.setBounds(0, 0, 600, 400);
+            getContentPane().setVisible(true);
+
         }
     }
 
@@ -150,9 +175,8 @@ public class BattleFrame extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            frame.dispose();
             timer.stop();
-
+            frame.dispose();
         }
     }
 
@@ -160,10 +184,9 @@ public class BattleFrame extends JFrame {
 
         public void actionPerformed(ActionEvent e) {
 
-            GameWorld g = new GameWorld(h);
             timer.stop();
+            GameWorld g = new GameWorld(h);
             dispose();
-
         }
     }
 
@@ -204,7 +227,7 @@ public class BattleFrame extends JFrame {
     }
 
     public int getIndex() {
-        return (int) (Math.random() * 15);
+        return (int) (Math.random() * wordList.length);
     }
 
     public String actualWord() {
@@ -213,6 +236,7 @@ public class BattleFrame extends JFrame {
 
     private void nameMouseClicked(java.awt.event.MouseEvent evt) {
         // Clear text on battle:
+
         name.setText("");
     }
 }
