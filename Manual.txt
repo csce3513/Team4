@@ -8,7 +8,7 @@
 
 
 
-1. Download the zipfile "Game Launcher"
+1. Download the jar file "Game Launcher"
 2. Unzip the files anywhere
 3. Double click the game.jar to launch the game, make sure you have 
 Java JRE installed on your computer.
