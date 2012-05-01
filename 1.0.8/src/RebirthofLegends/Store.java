@@ -186,7 +186,7 @@ private void Upg_wpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     if (h.getCrystals() >= h.weapon.cToUpg()) {
         h.takemymoney(h.weapon.cToUpg());
         h.weapon.upgrade();
-        String output = "You have " + h.getCrystals() + " Left ";
+        String output = "You have " + h.getCrystals() + " Crystals Left ";
         JOptionPane.showMessageDialog(null, output);
     } else {
         String output = "You aint got no dough =( ";
