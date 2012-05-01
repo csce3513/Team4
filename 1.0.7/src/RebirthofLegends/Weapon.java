@@ -3,17 +3,17 @@ package RebirthofLegends;
 
 public class Weapon {
     private int Upgrade;
-    private int Wpatk;
+    private int Dmg;
     private int maxUpg;
+
     
     Weapon(){
         Upgrade = 1;
-        Wpatk = 10;
+        Dmg = 10;
         maxUpg = 100;
     }
-    Weapon(int upgrade, int dmg){
+    Weapon(int upgrade){
         Upgrade = upgrade;
-        Wpatk = dmg;
         maxUpg = 100;
     }
 
@@ -26,11 +26,11 @@ public class Weapon {
     }
 
     public int getWpatk() {
-        return Wpatk;
+        return Dmg;
     }
 
     public void setWpatk(Integer wpatk) {
-        Wpatk = wpatk;
+        Dmg = wpatk;
     }
    
     public void setMaxUpg(Integer maxUpg) {
@@ -42,7 +42,7 @@ public class Weapon {
     }
    
     public int resetWpatk(){
-        return Wpatk = 7;
+        return Dmg = 7;
     }
    
     public int resetUpg(){
@@ -63,7 +63,7 @@ public class Weapon {
     	}
     	else{
     		Upgrade ++;
-    		Wpatk = ((Wpatk * 5)/4+5);
+    		Dmg = ((Dmg * 5)/4+5);
     	}
     }
     
