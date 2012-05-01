@@ -1,0 +1,19 @@
+CHANGELOG VERSION 1.0.9
+April 30, 2012
+Alley, Jack, Richard
+
+Updates:
+* Added bg image to battle frame (Richard)
+* Made 7 new bg images for battle levels (Jack)
+* Implemented related code to connect new images to battle (Jack)
+* Wrote test cases for the new code (Alley)
+* Made the new executable file for version 1.0.9(Jack)
+* Added Instruction Manaul (Jack)
+* Added new functions for monster hp/dmg growth (Jack)
+* Added new function for weapon upgrade (Jack)
+* Added new function for crystal reward (Jack)
+* Added new line to view current weapon attack (Jack)
+
+Fixes:
+* Fixed an error with frames disposing improperly 
+* Fixed stat view window where name wasn't showing if too long 

@@ -1,0 +1,25 @@
+CHANGELOG VERSION 1.0.8
+April 30, 2012
+Alley, Jack, Richard
+
+Updates:
+* Hero max crystal, max health (Richard)
+* Added these variables to save function (Richard)
+* Added new function for getting weapon attack (Jack)
+* Added new frame for store with Upgrade weapon, Buy HP and Heal buttons(Jack)
+* Linked frames to and from store (Jack)
+* Added functionality to upgrade weapon (Jack)
+* Added timer to battle (Richard)
+* Added option to buy hp (Jack)
+* Added option to Health hp (Jack)
+* Added function for crystals needed per weapon upgrade (Jack)
+* Added "Lose game" frame (Jack)
+* Added the testcases for save class (Alley)
+* Added the testcases for readData class (Alley)
+* Added the testcases for timer class (Alley)
+
+
+Fixes:
+* Deleted "Home" button
+* Deleted "Home Description label"
+* Changed replenish hp from home to store

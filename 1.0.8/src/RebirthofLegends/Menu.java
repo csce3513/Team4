@@ -50,13 +50,6 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rebirth of Legends");
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
-            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
-                formWindowGainedFocus(evt);
-            }
-            public void windowLostFocus(java.awt.event.WindowEvent evt) {
-            }
-        });
         getContentPane().setLayout(null);
 
         New_Game.setText("New Game");
@@ -100,10 +93,6 @@ private void New_GameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
         GameWorld g = new GameWorld(h);
         dispose();
     }//GEN-LAST:event_ContinueActionPerformed
-
-private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
-// TODO add your handling code here:
-}//GEN-LAST:event_formWindowGainedFocus
 
     public static void main(String args[]) {
 

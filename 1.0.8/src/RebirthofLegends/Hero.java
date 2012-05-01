@@ -8,8 +8,7 @@ public class Hero {
     String element = "";
     String gender = "";
     int crystals = 0;
-    int maxCrystals = 0;
-    Weapon weapon = new Weapon();
+    Weapon awesome = new Weapon();
 
     Hero() {
 
@@ -26,20 +25,9 @@ public class Hero {
         setElement(e);
         setGender(g);
     }
-    
-    Hero(int h,int mx, String n, String e, String g,int c, int mc){
-        setMaxHealth(mx);
-        setHealth(h);
-        setName(n);
-        setElement(e);
-        setGender(g);
-        setCrystals(c);
-        setMaxCrystals(mc); 
-    }
 
     public int doDamage(double d) {
-            //Damge is d ( percentage Correct) * the current damage done by the weapon
-        int weaponDmg = weapon.getWpatk();
+        int weaponDmg = awesome.getWpatk();
         int dmgDone = (int) (weaponDmg * d);
         return dmgDone;
     }
@@ -59,8 +47,6 @@ public class Hero {
     public void setElement(String e) {
         element = e;
     }
-    
- 
 
     public boolean deadCheck() {
         if (health <= 0) {
@@ -73,29 +59,17 @@ public class Hero {
     public void heal() {
         health = maxHealth;
     }
-    
-    public void takemymoney(int a) {
-        crystals = crystals - a;
-    }
-    
-    public void incMaxHP(){
-        maxHealth = maxHealth +20;
-        health = health +20;
-    }
 
     public void win() {
         crystals++;
     }
-    public void win(int a) {
-        crystals = crystals + a;
-    }
 
     public Weapon getAwesome() {
-        return weapon;
+        return awesome;
     }
 
     public void setAwesome(Weapon awesome) {
-        this.weapon = awesome;
+        this.awesome = awesome;
     }
 
     public String getName() {
@@ -124,14 +98,6 @@ public class Hero {
 
     public void setCrystals(int crystals) {
         this.crystals = crystals;
-    }
-        
-    public int getMaxCrystals() {
-        return maxCrystals;
-    }
-
-    public void setMaxCrystals(int maxCrystals) {
-        this.maxCrystals = maxCrystals;
     }
 
     public int getMaxHealth() {

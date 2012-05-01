@@ -3,12 +3,10 @@ package RebirthofLegends;
 public class Saving {
 
     private int HP;
-    private int maxHP;
     private String name;
     private String element;
     private String gender;
     private int crystal;
-    private int maxCrystal;
 
     public Saving() {
         this(0, "", "", "", 0);
@@ -21,23 +19,9 @@ public class Saving {
         setGender(g);
         setCrystal(c);
     }
-    public Saving(int h, int mh, String nm, String elm, String g, int c, int mc) {
-        
-        setHP(h);
-        setMaxHP(mh);
-        setName(nm);
-        setElement(elm);
-        setGender(g);
-        setCrystal(c);
-        setMaxCrystal(mc);
-    }
 
     public void setHP(int h) {
         HP = h;
-    }
-    
-    public void setMaxHP(int h){
-        maxHP = h;
     }
 
     public void setGender(String g) {
@@ -56,15 +40,8 @@ public class Saving {
         crystal = c;
     }
 
-    public void setMaxCrystal(int c) {
-        maxCrystal = c;
-    }
     public int getHP() {
         return HP;
-    }
-    
-    public int getMaxHP() {
-        return maxHP;
     }
 
     public String getName() {
@@ -82,8 +59,4 @@ public class Saving {
     public int getCrystal() {
         return crystal;
     }
-    
-    public int getMaxCrystal() {
-        return maxCrystal;
-    }    
 }

@@ -100,7 +100,7 @@ public class CharCreate extends javax.swing.JFrame {
         bg_avatar.setBounds(90, 90, 180, 190);
 
         ele_desc.setBackground(new java.awt.Color(253, 228, 207));
-        ele_desc.setFont(new java.awt.Font("Times New Roman", 1, 14));
+        ele_desc.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         ele_desc.setText("Choose your Element");
         ele_desc.setOpaque(true);
         getContentPane().add(ele_desc);
@@ -115,16 +115,6 @@ public class CharCreate extends javax.swing.JFrame {
         Char_Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Char_NameActionPerformed(evt);
-            }
-        });
-        Char_Name.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                Char_NameFocusGained(evt);
-            }
-        });
-        Char_Name.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                Char_NameKeyTyped(evt);
             }
         });
         getContentPane().add(Char_Name);
@@ -175,7 +165,7 @@ public class CharCreate extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Elements);
-        Elements.setBounds(370, 180, 110, 20);
+        Elements.setBounds(370, 180, 110, 22);
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bgchar.jpg"))); // NOI18N
         getContentPane().add(bg);
@@ -222,15 +212,6 @@ public class CharCreate extends javax.swing.JFrame {
         // Clear text on char name:
         Char_Name.setText("");
     }//GEN-LAST:event_Char_NameMouseClicked
-
-private void Char_NameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Char_NameFocusGained
-// TODO add your handling code here:
-}//GEN-LAST:event_Char_NameFocusGained
-
-private void Char_NameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Char_NameKeyTyped
-// TODO add your handling code here:
-}//GEN-LAST:event_Char_NameKeyTyped
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back_Menu;
     private javax.swing.JTextField Char_Name;

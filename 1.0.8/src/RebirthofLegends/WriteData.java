@@ -47,14 +47,12 @@ public class WriteData {
 
         try {
             record.setHP(h.getHealth());
-            record.setMaxHP(h.getMaxHealth());
             record.setName(h.getName());
             record.setElement(h.getElement());
             record.setGender(h.getGender());
             record.setCrystal(h.getCrystals());
-            record.setMaxCrystal(h.getMaxCrystals());
             if (record.getHP() > 0) {
-                output.format("%d %d %s %s %s %d %d\n", record.getHP(), record.getMaxHP(), record.getName(), record.getElement(), record.getGender(), record.getCrystal(), record.getMaxCrystal());
+                output.format("%d %s %s %s %d\n", record.getHP(), record.getName(), record.getElement(), record.getGender(), record.getCrystal());
             } else {
                 System.out.println("HP must be greater than 0");
             }

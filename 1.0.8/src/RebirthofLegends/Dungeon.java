@@ -12,12 +12,12 @@ import javax.swing.JFrame;
 public class Dungeon extends JFrame {
     
     Hero h = new Hero();
-  Monster m = new Monster();
+  //  Monster m = new Monster();
 
     public Dungeon(Hero hero /*Monster monster */) {
         
         h = hero;
-        
+   //     m = monster;
         initComponents();
         makeFrame();
     }
@@ -93,56 +93,26 @@ public class Dungeon extends JFrame {
         blvl1.setBounds(20, 100, 150, 23);
 
         blvl2.setText("Level 2");
-        blvl2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blvl2ActionPerformed(evt);
-            }
-        });
         getContentPane().add(blvl2);
         blvl2.setBounds(220, 100, 140, 23);
 
         blvl3.setText("Level 3");
-        blvl3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blvl3ActionPerformed(evt);
-            }
-        });
         getContentPane().add(blvl3);
         blvl3.setBounds(420, 100, 140, 23);
 
         blvl4.setText("Level 4");
-        blvl4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blvl4ActionPerformed(evt);
-            }
-        });
         getContentPane().add(blvl4);
         blvl4.setBounds(20, 220, 150, 23);
 
         blvl5.setText("Level 5");
-        blvl5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blvl5ActionPerformed(evt);
-            }
-        });
         getContentPane().add(blvl5);
         blvl5.setBounds(220, 220, 140, 23);
 
         blvl6.setText("Level 6");
-        blvl6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blvl6ActionPerformed(evt);
-            }
-        });
         getContentPane().add(blvl6);
         blvl6.setBounds(420, 220, 140, 23);
 
         blvlf.setText("Final Boss");
-        blvlf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blvlfActionPerformed(evt);
-            }
-        });
         getContentPane().add(blvlf);
         blvlf.setBounds(220, 330, 140, 23);
 
@@ -192,8 +162,7 @@ public class Dungeon extends JFrame {
 
     private void blvl1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blvl1ActionPerformed
         // Level 1:
-        m = new Monster(1);
-        BattleFrame b = new BattleFrame(h,m);
+        BattleFrame b = new BattleFrame(h);
         dispose();
        // setVisible(false);
     }//GEN-LAST:event_blvl1ActionPerformed
@@ -203,54 +172,6 @@ public class Dungeon extends JFrame {
         GameWorld g = new GameWorld(h);
         dispose();
     }//GEN-LAST:event_backActionPerformed
-
-private void blvl2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blvl2ActionPerformed
-        // Level 2:
-        m = new Monster(2);
-        BattleFrame b = new BattleFrame(h,m);
-        dispose();
-       // setVisible(false);
-}//GEN-LAST:event_blvl2ActionPerformed
-
-private void blvl3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blvl3ActionPerformed
-        // Level 3:
-        m = new Monster(3);
-        BattleFrame b = new BattleFrame(h,m);
-        dispose();
-       // setVisible(false);
-}//GEN-LAST:event_blvl3ActionPerformed
-
-private void blvl4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blvl4ActionPerformed
-        // Level 4:
-        m = new Monster(4);
-        BattleFrame b = new BattleFrame(h,m);
-        dispose();
-       // setVisible(false);
-}//GEN-LAST:event_blvl4ActionPerformed
-
-private void blvl5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blvl5ActionPerformed
-        // Level 5:
-        m = new Monster(5);
-        BattleFrame b = new BattleFrame(h,m);
-        dispose();
-       // setVisible(false);
-}//GEN-LAST:event_blvl5ActionPerformed
-
-private void blvl6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blvl6ActionPerformed
-        // Level 6:
-        m = new Monster(6);
-        BattleFrame b = new BattleFrame(h,m);
-        dispose();
-       // setVisible(false);
-}//GEN-LAST:event_blvl6ActionPerformed
-
-private void blvlfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blvlfActionPerformed
-        // Level Boss:
-        m = new Monster(10);
-        BattleFrame b = new BattleFrame(h,m);
-        dispose();
-       // setVisible(false);
-}//GEN-LAST:event_blvlfActionPerformed
 
 
        

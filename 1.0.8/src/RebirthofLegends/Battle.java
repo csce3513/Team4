@@ -49,19 +49,17 @@ String actualInput = "";
             
     	String output =	"You win with " + hero.getHealth() + " health left";
         JOptionPane.showMessageDialog(null,output);
-        hero.win(monster.getLevel());
+        hero.win();
         dispose();
         Dungeon d = new Dungeon(hero);
     	}
     	else{
     	hero.takeDamage(monster.doDamage());
     	if(hero.deadCheck())
-        {/*
+        {
     		String output = "You Lose with the monster having " + monster.getHealth() + " health left";
                 JOptionPane.showMessageDialog(null,output);
-                setVisible(false);*/
-            GameOver go = new GameOver();
-            dispose();
+                setVisible(false);
         }
     	
     }}

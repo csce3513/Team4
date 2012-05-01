@@ -7,45 +7,21 @@ public class Monster {
     private int health;
     private int damage;
     private int level;
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-    private int maxHP;
-
-    
     
     Monster(){
-        health = 10;
+        health = 30;
         damage = 5;
-        level = 1;
-        maxHP = 10;
     }
     
     public Monster(int a)
     {
-        level = a;
-        setStats(a);
-        maxHP = health;
+      setHealth(a);
     }
     
-    public int getMaxHP() {
-        return maxHP;
-    }
-
-    public void setMaxHP(int maxHP) {
-        this.maxHP = maxHP;
-    }
-    
-    public void setStats(int a)
+    public void setHealth(int a)
     {
-        
-        health = a*10;  
-        damage = a*a+1;
+        if (a >= 0 )
+        health = a;  
             
     }
     

@@ -27,15 +27,12 @@ public class ReadData {
         //System.out.printf("%-10s%-12s%-12s%-12s\n", "HP","Name","Element","Gender");
 
         try {
-            
             h.setHealth(input.nextInt());
-            h.setMaxHealth(input.nextInt());
             h.setName(input.next());
             h.setElement(input.next());
             h.setGender(input.next());
             h.setCrystals(input.nextInt());
-            h.setMaxCrystals(input.nextInt());    
-            
+
             //  System.out.printf("%-10d%-12s%-12s%-12s\n", record.getHP(),record.getName(),record.getElement(),record.getGender());
         } catch (NoSuchElementException elementException) {
             System.err.println("File improperly formed");
