@@ -1,0 +1,23 @@
+CHANGELOG VERSION 1.1.1
+May 2, 2012
+Jack
+
+Problems:
+* No Intro story 
+* Logic for charcreate input does not work
+* Char creation panel pictures still doesn't change for male/female or elements
+
+Updates:
+* Added 8 new bg images for intro story
+* Added 4 new frames for intro story
+* Repacked the Jar file and pushed out new game client
+* Added "Refuse to accept destiny" option in the beggining
+
+Fixes:
+* reconnected menu and char_create frames
+* Re-implemented default character name
+* Removed element.ser file
+
+Fixes needed for version 1.1.2
+* Logic for charcreate input does not work
+* Char creation panel pictures still doesn't change for male/female or elements
