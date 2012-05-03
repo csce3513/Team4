@@ -1,0 +1,33 @@
+CHANGELOG VERSION 1.1.0
+April 30, 2012
+Jack
+
+Problems:
+* Error reading save file if name has space.
+* Weapon upgrade output damage 6 7 4 5 10 11 80
+* Weapon upgrade not saving (class conflict)
+* Constructor in weapon takes in 2 value instead of just upgrade
+* Nothing happens after final level, no game finished screen.
+
+Updates:
+* Added "back to menu" button to "Game Over" Screen.
+* Added New Frame "You Win!" for beating final boss.
+* Added "Menu" button to "You Win" frame.
+* Added bg_img for "You Win" frame.
+* Changed character name field from "Leading" to "Centered".
+
+Fixes:
+* save file now saves weapon upgrade level 
+* Weapon upgrade function fixed (changed power function to math.pow())
+* Fixed Weapon constructor class to take only upgrade
+* cleaned code in "battle.java"
+* cleaned code in "CharCreate.java"
+* In GameWorld.java, Switched position of current attack and current crystals
+* Added string value to take in user input in "CharCreate.java"
+* Made "store" icon more visible
+
+
+Fixes needed for version 1.1.1
+* Logic for charcreate input does not work
+* Char creation panel pictures still doesn't change for male/female or elements
+

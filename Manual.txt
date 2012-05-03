@@ -8,10 +8,10 @@
 
 
 
-1. Download the jar file "Game Launcher"
+1. Download the jar file "RebirthOfLegends"
 2. Unzip the files anywhere
 3. Double click the game.jar to launch the game, make sure you have 
-Java JRE installed on your computer.
+Java JRE installed on your computer and have admin access.
 
 
 How to get Java JRE.
