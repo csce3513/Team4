@@ -65,14 +65,14 @@ public class GameWorld extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Hero_Info = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        name = new javax.swing.JLabel();
         Crystals = new javax.swing.JLabel();
         WeaponLvl = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        atk = new javax.swing.JLabel();
         HP_Wplvl = new javax.swing.JLabel();
         Store = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        DDoor = new javax.swing.JButton();
         Save = new javax.swing.JButton();
         DDLabel = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
@@ -80,44 +80,44 @@ public class GameWorld extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        Hero_Info.setBackground(new java.awt.Color(0, 102, 102));
-        Hero_Info.setLayout(null);
+        jDesktopPane1.setBackground(new java.awt.Color(0, 102, 102));
+        jDesktopPane1.setForeground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Name: " + h.getName()
+        name.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        name.setForeground(new java.awt.Color(255, 255, 255));
+        name.setText("Name: " + h.getName()
         );
         //jLabel2.setText("HP: " + h.getHealth());
-        Hero_Info.add(jLabel1);
-        jLabel1.setBounds(10, 10, 140, 14);
+        name.setBounds(10, 10, 120, 14);
+        jDesktopPane1.add(name, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Crystals.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         Crystals.setForeground(new java.awt.Color(255, 255, 255));
         Crystals.setText("Crystals: " + h.getCrystals()
         );
-        Hero_Info.add(Crystals);
-        Crystals.setBounds(10, 60, 140, 14);
+        Crystals.setBounds(10, 90, 120, 14);
+        jDesktopPane1.add(Crystals, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         WeaponLvl.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         WeaponLvl.setForeground(new java.awt.Color(255, 255, 255));
-        WeaponLvl.setText("HP: " + h.getHealth());
-        Hero_Info.add(WeaponLvl);
-        WeaponLvl.setBounds(320, 210, 140, 20);
+        WeaponLvl.setText("Weapon Level: " + h.weapon.getUpgrade());
+        WeaponLvl.setBounds(10, 50, 120, 14);
+        jDesktopPane1.add(WeaponLvl, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Current Attack: "+h.weapon.getWpatk());
-        Hero_Info.add(jLabel3);
-        jLabel3.setBounds(10, 44, 140, 14);
+        atk.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        atk.setForeground(new java.awt.Color(255, 255, 255));
+        atk.setText("Current Attack: "+h.weapon.getWpatk());
+        atk.setBounds(10, 70, 120, 14);
+        jDesktopPane1.add(atk, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         HP_Wplvl.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         HP_Wplvl.setForeground(new java.awt.Color(255, 255, 255));
-        HP_Wplvl.setText("HP: " + h.getHealth()+ "    UpgLevel: " + h.weapon.getUpgrade());
-        Hero_Info.add(HP_Wplvl);
-        HP_Wplvl.setBounds(10, 26, 130, 20);
+        HP_Wplvl.setText("HP: " + h.getHealth());
+        HP_Wplvl.setBounds(10, 30, 120, 14);
+        jDesktopPane1.add(HP_Wplvl, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        getContentPane().add(Hero_Info);
-        Hero_Info.setBounds(360, 10, 160, 80);
+        getContentPane().add(jDesktopPane1);
+        jDesktopPane1.setBounds(420, 20, 140, 110);
 
         Store.setText("Store");
         Store.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -131,16 +131,16 @@ public class GameWorld extends JFrame {
             }
         });
         getContentPane().add(Store);
-        Store.setBounds(410, 240, 110, 30);
+        Store.setBounds(440, 290, 110, 30);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bt_dungeon.jpg"))); // NOI18N
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        DDoor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bt_dungeon.jpg"))); // NOI18N
+        DDoor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                DDoorMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(110, 40, 200, 150);
+        getContentPane().add(DDoor);
+        DDoor.setBounds(140, 60, 200, 150);
 
         Save.setText("Save Game");
         Save.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -162,7 +162,7 @@ public class GameWorld extends JFrame {
         DDLabel.setText("Click Above to Begin");
         DDLabel.setOpaque(true);
         getContentPane().add(DDLabel);
-        DDLabel.setBounds(110, 194, 200, 20);
+        DDLabel.setBounds(140, 210, 200, 20);
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg01.jpeg"))); // NOI18N
         getContentPane().add(bg);
@@ -179,13 +179,13 @@ public class GameWorld extends JFrame {
 
     }//GEN-LAST:event_StoreMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void DDoorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DDoorMouseClicked
         // Add code for opening up dungeon frame.
         Dungeon d = new Dungeon(h);
         setVisible(false);
         //     d.setVisible(true);
 
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_DDoorMouseClicked
 
 private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
     //save button
@@ -216,14 +216,14 @@ private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Crystals;
     private javax.swing.JLabel DDLabel;
+    private javax.swing.JButton DDoor;
     private javax.swing.JLabel HP_Wplvl;
-    private javax.swing.JPanel Hero_Info;
     private javax.swing.JButton Save;
     private javax.swing.JButton Store;
     private javax.swing.JLabel WeaponLvl;
+    private javax.swing.JLabel atk;
     private javax.swing.JLabel bg;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel name;
     // End of variables declaration//GEN-END:variables
 }

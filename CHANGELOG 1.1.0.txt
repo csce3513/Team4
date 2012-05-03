@@ -15,6 +15,7 @@ Updates:
 * Added "Menu" button to "You Win" frame.
 * Added bg_img for "You Win" frame.
 * Changed character name field from "Leading" to "Centered".
+* Changed character information panel to jdeskpane for better support
 
 Fixes:
 * save file now saves weapon upgrade level 
@@ -25,7 +26,7 @@ Fixes:
 * In GameWorld.java, Switched position of current attack and current crystals
 * Added string value to take in user input in "CharCreate.java"
 * Made "store" icon more visible
-
+* Fixed content in new jdeskpane for hero stats
 
 Fixes needed for version 1.1.1
 * Logic for charcreate input does not work
