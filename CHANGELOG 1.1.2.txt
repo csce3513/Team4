@@ -1,0 +1,21 @@
+CHANGELOG VERSION 1.1.2
+May 3, 2012
+Jack
+
+Problems:
+* Logic for charcreate input does not work
+* Char creation panel pictures still doesn't change for male/female or elements
+* need elements to do something
+* no warning for continuing a game without a save file
+
+Updates:
+* Added crystal count in store frame
+* Added warning message for trying to continue without a save file
+
+
+Fixes:
+* in Store.java, fixed weapon upgrade message to display new weapon attack after upgrade
+* in Store.java, fixed buy hp message to display new max HP
+* in Store.java, fixed heal message to display current HP
+
+Fixes needed for version 1.1.3
